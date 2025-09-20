@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Squares2X2Icon, ListBulletIcon } from '@heroicons/react/24/outline';
 import { useProducts } from "../../context/ProductContext";
+import { Logs, TextAlignJustify } from "lucide-react";
 
 const SelectField = ({ label, options, value, onChange }) => (
   <div className="flex items-center gap-2">
@@ -45,9 +45,7 @@ const FilterBar = ({ itemCount = 0 }) => {
     { value: "featured", label: "Featured" },
     { value: "priceHighToLow", label: "Price: High to Low" },
     { value: "priceLowToHigh", label: "Price: Low to High" },
-    { value: "newest", label: "Newest First" },
-    { value: "popularity", label: "Most Popular" },
-    { value: "rating", label: "Top Rated" },
+   
   ];
 
   const handleCategoryChange = (e) => {
@@ -82,11 +80,11 @@ const FilterBar = ({ itemCount = 0 }) => {
       </div>
      </div>
       <div className="flex items-center gap-4">
-        <button className="p-1 text-blue-500 hover:bg-gray-100 rounded">
-          <Squares2X2Icon className="h-6 w-6" />
+        <button className="p-1 text-blue-400 hover:bg-gray-100 rounded">
+          <Logs className="h-8 w-8 font-black" />
         </button>
         <button className="p-1 text-gray-600 hover:bg-gray-100 rounded">
-          <ListBulletIcon className="h-6 w-6" />
+         <TextAlignJustify className="h-8 w-8 font-black " />
         </button>
       </div>
     </div>

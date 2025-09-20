@@ -219,7 +219,7 @@ const LeftNav = () => {
   );
 
   return (
-    <aside className="w-full max-w-xs h-fit flex flex-col gap-8 pt-0 p-4">
+    <aside className="w-full max-w-2/8 h-fit flex flex-col gap-8 pt-0 p-4">
       <form onSubmit={(e) => e.preventDefault()} className="bg-[#F6F7F8] rounded p-4">
         <h2 className="text-2xl mb-5 font-medium text-gray-900">Hot Deals</h2>
         <HotDeals deals={hotDeals} onDealClick={handleDealClick} />
@@ -228,17 +228,21 @@ const LeftNav = () => {
       <form onSubmit={(e) => e.preventDefault()} className="bg-[#F6F7F8] p-4 rounded">
         <h3 className="text-2xl mb-5 font-medium text-gray-900">Price Range</h3>
 
+        <div className="mb-4">
+          <div className="flex items-center mb-6">
+            <span className="text-gray-700 font-medium mr-4">Ranger:</span>
+            <span className="text-gray-700 font-medium">
+              ${localPriceRange.min.toFixed(2)} - ${localPriceRange.max.toFixed(2)}
+            </span>
+          </div>
+        </div>
+
         <PriceRangeSlider
           min={localPriceRange.min}
           max={localPriceRange.max}
           onChange={handlePriceChange}
           className="mb-4"
         />
-
-        <div className="flex justify-between text-sm text-gray-600 mb-4">
-          <span>${localPriceRange.min}</span>
-          <span>${localPriceRange.max}</span>
-        </div>
       </form>
 
       <style>{`
@@ -306,12 +310,12 @@ const LeftNav = () => {
         <h3 className="text-2xl mb-5 font-medium text-gray-900">
           Color Filter
         </h3>
-        <div className="flex flex-wrap gap-3">
+        <div className="flex justify-between">
           {COLOR_FILTERS.map((colorItem) => (
             <button
               key={colorItem.id}
               type="button"
-              className={`w-8 h-8 rounded-full ${
+              className={`w-10 h-10 rounded-full ${
                 colorItem.bgColor
               } hover:opacity-80 transition-all ${
                 filters.colors?.includes(colorItem.color)
@@ -334,11 +338,6 @@ const LeftNav = () => {
 
        <form onSubmit={(e) => e.preventDefault()} className="bg-[#F6F7F8] w-full text-xl flex justify-center items-center rounded p-4 py-6">
         <button 
-          type="button"
-          onClick={(e) => {
-            e.preventDefault();
-            resetFilters();
-          }}
           className="hover:text-blue-600 transition-colors"
         >
           MORE

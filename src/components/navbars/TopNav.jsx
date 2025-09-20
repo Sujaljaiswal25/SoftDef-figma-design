@@ -6,12 +6,12 @@ const navItems = ["HOME", "BAG", "SNEAKERS", "BELTS", "CONTACT"];
 const TopNav = () => {
   return (
     <div className="w-full h-18 bg-[#F6F7F8] flex items-center justify-between px-4 py-2">
-      <h1 className="text-2xl font-bold gap-2 flex items-center  text-black">
-        <span className=" text-2xl text-[#40BFFF]">
-          <Diamond />
-        </span>
-        E-Comm
-      </h1>
+      <div className="flex items-center mb-4">
+        <div className="bg-blue-400 rounded-lg p-2 mr-3">
+          <div className="w-4 h-4 bg-white rounded-sm transform rotate-45"></div>
+        </div>
+        <h2 className="text-xl font-black text-gray-800">E-Comm</h2>
+      </div>
 
       <div className="nav-center w-[40%] h-[100%] flex items-center justify-between">
         <ul className="flex items-center justify-between w-full h-full text-lg font-semibold">
