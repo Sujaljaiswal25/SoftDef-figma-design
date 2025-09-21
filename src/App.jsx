@@ -1,24 +1,42 @@
-import React from "react";
+import React, { useState, Suspense } from "react";
 import TopNav from "./components/navbars/TopNav";
-import LeftNav from "./components/navbars/LeftNav";
 import BigPoster from "./components/poster/BigPoster";
-// import FilterBar from "./components/utils/FilterBar";
-import Products from "./components/products/Products";
 import Footer from "./components/footer/Footer";
 
+const Products = React.lazy(() => import("./components/products/Products"));
+const MobileNav = React.lazy(() => import("./components/navbars/MobileNav"));
+
 const App = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
-      <div className="w-[100%] min-h-screen">
-        <TopNav />
-        <div className="w-[100%] flex h-fit pl-0 p-3">
-          <LeftNav />
-          <div className="w-[100%] pt-0 flex flex-col gap-4 h-fit pl-0 p-3">
-            <BigPoster />
+    <div className="w-full min-h-screen overflow-x-hidden">
+      <TopNav
+        isMobileMenuOpen={isMobileMenuOpen}
+        setIsMobileMenuOpen={setIsMobileMenuOpen}
+      />
+      <div className="w-full mt-3  flex h-fit">
+        <Suspense fallback={<div className="h-screen w-64 bg-gray-100"></div>}>
+          <MobileNav
+            isMobileMenuOpen={isMobileMenuOpen}
+            setIsMobileMenuOpen={setIsMobileMenuOpen}
+          />
+        </Suspense>
+        <div className="w-full flex flex-col gap-4 px-2 md:px-4">
+          <BigPoster />
+          <Suspense
+            fallback={
+              <div className="w-full h-96 flex items-center justify-center">
+                Loading products...
+              </div>
+            }
+          >
             <Products />
-          </div>
+          </Suspense>
         </div>
-        <Footer />
       </div>
+      <Footer />
+    </div>
   );
 };
 
