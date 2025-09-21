@@ -23,7 +23,7 @@ const BigPoster = () => {
         />
       </div> */}
 
-      <img className="w-full h-full object-cover" src="../../public/images/Poster.jpg" alt="" />
+      <img className="w-full h-full object-cover" src="https://i.pinimg.com/1200x/2c/91/6d/2c916d0d51bf0c0dadf6cb575e296cf8.jpg" alt="" />
     </div>
   );
 };
