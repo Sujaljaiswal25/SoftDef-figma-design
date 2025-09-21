@@ -1,12 +1,77 @@
-# React + Vite
+# SoftDef-figma-design
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + Vite project implementing a responsive design from Figma, featuring product filtering, navigation components, and a modern UI.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React + Vite for fast development and build times
+- Tailwind CSS for styling
+- Responsive design with mobile navigation
+- Product filtering functionality
+- Pagination
+- Context API for state management
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Before you begin, ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (version 14 or higher)
+- npm (comes with Node.js) or [yarn](https://yarnpkg.com/)
+
+## Setup Instructions
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Sujaljaiswal25/SoftDef-figma-design.git
+   cd SoftDef-figma-design
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   # or if you use yarn
+   yarn
+   ```
+
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   # or if you use yarn
+   yarn dev
+   ```
+
+4. Open your browser and visit:
+   ```
+   http://localhost:5173
+   ```
+
+## Project Structure
+
+```
+src/
+├── components/          # React components
+│   ├── filterUtils/    # Filtering components
+│   ├── footer/         # Footer components
+│   ├── navbars/        # Navigation components
+│   ├── poster/         # Poster components
+│   └── products/       # Product-related components
+├── context/            # React Context providers
+└── utils/              # Utility functions
+```
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build locally
+
+## Technologies Used
+
+- React
+- Vite
+- Tailwind CSS
+- ESLint
+- Context API
